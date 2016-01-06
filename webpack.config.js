@@ -9,15 +9,14 @@ module.exports = {
   ],
   output: {
     path: __dirname + '/js/',
-    filename: './lib/bundle.js',
-    publicPath: '/src/'
+    filename: 'bundle.js',
+    publicPath: '/static/'
   },
   module: {
     loaders: [
       { test: /\.css$/, loader: 'style!css' },
-      // { test: /\.js$/, loaders: ['react-hot', 'babel-loader!jsx?harmony'], exclude: /node_modules/ }
-      { test: /\.jsx$/, loaders: ['react-hot', 'babel'],exclude: /node_modules/ },
-      { test: /\.js$/,loader: 'babel-loader', exclude: /node_modules/}
+      { test: /\.js|jsx$/, loaders: ['react-hot', 'babel-loader'], exclude: /node_modules/ }
+      //{ test: /\.jsx|js$/, loaders: ['react-hot', 'babel-loader'],exclude: /node_modules/ }
     ]
   },
   resolve: {
